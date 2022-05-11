@@ -2,6 +2,18 @@
 
 A clone of the YouTube video player in HTML, CSS and vanilla JavaScript with all the cool features such as volume controls, fullscreen, teather mode, captions, picture in picture, etc. 😱
 
+# Checklist
+
+- [x] Play
+- [x] Pause
+- [ ] Change volume
+- [ ] Change video time
+- [ ] Change play velocity
+- [ ] Captions
+- [ ] Full screen
+- [ ] Teather mode
+- [ ] Picture in picture
+
 # Technologies
 
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)

@@ -1,5 +1,5 @@
 const playPauseBtn = document.querySelector('.play-pause-btn');
-const theatherBtn = document.querySelector('.theater-btn');
+const theaterBtn = document.querySelector('.theater-btn');
 const fullScreenBtn = document.querySelector('.full-screen-btn');
 const miniPlayerBtn = document.querySelector('.mini-player-btn');
 const muteBtn = document.querySelector('.mute-btn');
@@ -57,7 +57,7 @@ video.addEventListener('pause', () => {
     videoContainer.classList.add('paused');
 });
 
-theatherBtn.addEventListener('click', toggleTheaterMode);
+theaterBtn.addEventListener('click', toggleTheaterMode);
 
 function toggleTheaterMode() {
     videoContainer.classList.toggle('theater');

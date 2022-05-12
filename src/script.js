@@ -221,9 +221,9 @@ function toggleScrubbing(e) {
     handleTimelineUpdate(e);
 }
 
-document.addEventListener('mouseup', e => {
+document.addEventListener('mouseup', (e) => {
     if (isScrubbing) {
-        toggleScrubbing();
+        toggleScrubbing(e);
     }
 });
 

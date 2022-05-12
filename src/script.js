@@ -4,6 +4,7 @@ const fullScreenBtn = document.querySelector('.full-screen-btn');
 const miniPlayerBtn = document.querySelector('.mini-player-btn');
 const muteBtn = document.querySelector('.mute-btn');
 const volumeSlider = document.querySelector('.volume-slider');
+const captionsBtn = document.querySelector('.captions-btn');
 
 const videoContainer = document.querySelector('.video-container');
 const video = document.querySelector('video');
@@ -55,6 +56,10 @@ document.addEventListener('keydown', (e) => {
         case 'arrowright':
         case 'l':
             skip(5);
+            break;
+
+        case 'c':
+            toggleCaptions();
             break;
     }
 });
@@ -220,3 +225,14 @@ document.addEventListener('mouseup', e => {
         toggleScrubbing();
     }
 });
+
+const captions = video.textTracks[0];
+captions.mode = 'hidden';
+
+captionsBtn.addEventListener('click', toggleCaptions);
+
+function toggleCaptions() {
+    const isHidden = captions.mode === 'hidden';
+    captions.mode = isHidden ? 'showing' : 'hidden';
+    videoContainer.classList.toggle('captions', isHidden);
+}

@@ -1,8 +1,8 @@
 # YouTube Video Player Clone
 
-A clone of the YouTube video player in HTML, CSS and vanilla JavaScript with all the cool features such as volume controls, full screen, theater mode, captions, picture in picture, etc. but better...because this one doesn't have ads!! ⛔🚫🙅
+A clone of the YouTube video player in HTML, CSS and vanilla JavaScript with all the cool features such as volume controls, full screen, theater mode, captions, picture in picture, etc. but better...because this one doesn't have ads!!
 
-😆😁
+⛔🚫🙅😆😁
 
 You can play any video that you want! Just access the application url: https://pncsoares.github.io/youtube-video-player-clone/src
 

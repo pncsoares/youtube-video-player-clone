@@ -18,13 +18,13 @@ body {
     background-color: black;
 }
 
-.video-container.teather,
+.video-container.theater,
 .video-container.full-screen {
     max-width: initial;
     width: 100%;
 }
 
-.video-container.teather {
+.video-container.theater {
     max-height: 90vh;
 }
 

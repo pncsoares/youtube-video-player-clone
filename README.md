@@ -56,7 +56,7 @@ Set the output as the folder named `assets/previewImages/`. The `%d` will increm
 - [x] Move forward
 - [x] Move backwards
 - [x] Playback speed
-- [x] Captions
+- [x] Captions (if no subtitles are loaded the captions button is hidden)
 - [x] Full screen
 - [x] Theater mode
 - [x] Picture in picture

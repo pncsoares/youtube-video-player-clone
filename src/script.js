@@ -232,6 +232,10 @@ document.addEventListener('mouseup', (e) => {
     }
 });
 
+function hideCaptionsButton() {
+    captionsBtn.style.display = 'none';
+}
+
 const captions = video.textTracks[0];
 captions.mode = 'hidden';
 

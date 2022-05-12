@@ -53,7 +53,7 @@ Set the output as the folder named `assets/previewImgs/`. The `%d` will incremen
 - [ ] Captions
 - [x] Full screen
 - [x] Theater mode
-- [ ] Picture in picture
+- [x] Picture in picture
 
 # Technologies
 

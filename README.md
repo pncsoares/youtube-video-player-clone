@@ -10,12 +10,12 @@ You can play any video that you want, just follow the instructions below 👇
 
 1. Start by forking the repository and clone it to your machine, clone instructions [here](#clone-repository)
 1. Create a folder called `assets` in the root of the directory
-1. Add a `.mp4` file in the root of that new folder
+1. Copy the video that you want to use and rename it to `video.mp4`
    -  If you have subtitles, name the file to `subtitles.vtt` and add it into the same folder
 1. Download [ffmpeg](https://ffmpeg.org/download.html) so you be able to run the next command
 1. Open terminal and execute the following command
    ```bash
-   ffmpeg -i assets/{change_with_your_video_name}.mp4 -vf fps=1/10,scale=120:-1 assets/previewImgs/preview%d.jpg
+   ffmpeg -i assets/video.mp4 -vf fps=1/10,scale=120:-1 assets/previewImgs/preview%d.jpg
    ```
 1. Open the app in the browser following this steps:
    - Expand `src` directory
@@ -30,7 +30,7 @@ You can play any video that you want, just follow the instructions below 👇
 ### `ffmpeg`
 Framework that decode, encode, transcode, mux, demux, stream, filter and play pretty much anything that humans and machines have created. Read the official documentation [here](https://ffmpeg.org/about.html).
 
-### `-i assets/{change_with_your_video_name}.mp4`
+### `-i assets/video.mp4`
 Set the input as our video.
 
 ### `-vf`

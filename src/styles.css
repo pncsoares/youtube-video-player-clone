@@ -140,6 +140,7 @@ video {
     transform-origin: left;
     transform: scaleX(0);
     transition: width 150ms ease-in-out, transform 150ms ease-in-out;
+    
 }
 
 .volume-container:hover .volume-slider,
@@ -165,7 +166,7 @@ video {
 
 .timeline-container {
     height: 7px;
-    margin-inline: .5rem;
+    margin-inline: 0.5rem;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -219,7 +220,7 @@ video {
     top: -1rem;
     transform: translate(-50%, -100%);
     left: calc(var(--preview-position) * 100%);
-    border-radius: .25rem;
+    border-radius: 0.25rem;
     border: 2px solid white;
     display: none;
 }

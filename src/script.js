@@ -183,8 +183,12 @@ timelineContainer.addEventListener('mousemove', handleTimelineUpdate);
 
 function handleTimelineUpdate(e) {
     const rect = timelineContainer.getBoundingClientRect();
-    const percent = Math.min(Math.max(0, e.x - rect.x), rect.width) / rect.width;
-    const previewImageNumber = Math.max(1, Math.floor((percent * video.duration) / 10));
+    const percent =
+        Math.min(Math.max(0, e.x - rect.x), rect.width) / rect.width;
+    const previewImageNumber = Math.max(
+        1,
+        Math.floor((percent * video.duration) / 10)
+    );
     const previewImageSrc = `../assets/previewImages/preview${previewImageNumber}.jpg`;
     previewImage.src = previewImageSrc;
     timelineContainer.style.setProperty('--preview-position', percent);
@@ -202,7 +206,8 @@ let isScrubbing = false;
 
 function toggleScrubbing(e) {
     const rect = timelineContainer.getBoundingClientRect();
-    const percent = Math.min(Math.max(0, e.x - rect.x), rect.width) / rect.width;
+    const percent =
+        Math.min(Math.max(0, e.x - rect.x), rect.width) / rect.width;
 
     isScrubbing = (e.buttons & 1) == 1;
     videoContainer.classList.toggle('scrubbing', isScrubbing);
@@ -241,10 +246,10 @@ function toggleCaptions() {
 playbackSpeedBtn.addEventListener('click', changePlaybackSpeed);
 
 function changePlaybackSpeed() {
-    let newPlaybackRate = video.playbackRate + .25;
+    let newPlaybackRate = video.playbackRate + 0.25;
 
     if (newPlaybackRate > 2) {
-        newPlaybackRate = .25;
+        newPlaybackRate = 0.25;
     }
 
     video.playbackRate = newPlaybackRate;

@@ -42,7 +42,7 @@ Set the video filter with a rate of 1 frame every ten seconds.
 ### `scale=120:-1`
 Set the preview image width to 120px and the height to be automatically scaled.
 
-### `assets/previewImgs/preview%d.jpg`
+### `assets/previewImages/preview%d.jpg`
 Set the output as the folder named `assets/previewImages/`. The `%d` will increment the number by one every time there is created a new file.
 
 # Checklist

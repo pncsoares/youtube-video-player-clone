@@ -8,6 +8,13 @@ const volumeSlider = document.querySelector('.volume-slider');
 const videoContainer = document.querySelector('.video-container');
 const video = document.querySelector('video');
 
+const currentTimeElement = document.querySelector('.current-time');
+const totalTimeElement = document.querySelector('.total-time');
+
+const previewImage = document.querySelector('.preview-img');
+const thumbnailImage = document.querySelector('.thumbnail-img');
+const timelineContainer = document.querySelector('.timeline-container');
+
 document.addEventListener('keydown', (e) => {
     const tagName = document.activeElement.tagName.toLowerCase();
 
@@ -38,6 +45,16 @@ document.addEventListener('keydown', (e) => {
 
         case 'm':
             toggleMute();
+            break;
+
+        case 'arrowleft':
+        case 'j':
+            skip(-5);
+            break;
+
+        case 'arrowright':
+        case 'l':
+            skip(5);
             break;
     }
 });
@@ -120,4 +137,86 @@ video.addEventListener('volumechange', () => {
     }
 
     videoContainer.dataset.volumeLevel = volumeLevel;
+});
+
+video.addEventListener('loadeddata', () => {
+    totalTimeElement.textContent = formatDuration(video.duration);
+});
+
+const leadingZeroFormatter = new Intl.NumberFormat(undefined, {
+    minimumIntegerDigits: 2,
+});
+
+function formatDuration(duration) {
+    const seconds = Math.floor(duration % 60);
+    const minutes = Math.floor(duration / 60) % 60;
+    const hours = Math.floor(duration / 3600);
+
+    const secondsFormatted = leadingZeroFormatter.format(seconds);
+    const minutesFormatted = leadingZeroFormatter.format(minutes);
+
+    if (hours === 0) {
+        return `${minutes}:${secondsFormatted}`;
+    } else {
+        return `${hours}:${minutesFormatted}:${secondsFormatted}`;
+    }
+}
+
+video.addEventListener('timeupdate', () => {
+    currentTimeElement.textContent = formatDuration(video.currentTime);
+
+    const percent = video.currentTime / video.duration;
+    timelineContainer.style.setProperty('--progress-position', percent);
+});
+
+function skip(duration) {
+    video.currentTime += duration;
+}
+
+timelineContainer.addEventListener('mousemove', handleTimelineUpdate);
+
+function handleTimelineUpdate(e) {
+    const rect = timelineContainer.getBoundingClientRect();
+    const percent = Math.min(Math.max(0, e.x - rect.x), rect.width) / rect.width;
+    const previewImageNumber = Math.max(1, Math.floor((percent * video.duration) / 10));
+    const previewImageSrc = `../assets/previewImages/preview${previewImageNumber}.jpg`;
+    previewImage.src = previewImageSrc;
+    timelineContainer.style.setProperty('--preview-position', percent);
+
+    if (isScrubbing) {
+        e.preventDefault();
+        thumbnailImage.src = previewImageSrc;
+        timelineContainer.style.setProperty('--progress-position', percent);
+    }
+}
+
+timelineContainer.addEventListener('mousedown', toggleScrubbing);
+
+let isScrubbing = false;
+
+function toggleScrubbing(e) {
+    const rect = timelineContainer.getBoundingClientRect();
+    const percent = Math.min(Math.max(0, e.x - rect.x), rect.width) / rect.width;
+
+    isScrubbing = (e.buttons & 1) == 1;
+    videoContainer.classList.toggle('scrubbing', isScrubbing);
+
+    if (isScrubbing) {
+        wasPaused = video.paused;
+        video.pause();
+    } else {
+        video.currentTime = percent * video.duration;
+
+        if (!wasPaused) {
+            video.play();
+        }
+    }
+
+    handleTimelineUpdate(e);
+}
+
+document.addEventListener('mouseup', e => {
+    if (isScrubbing) {
+        toggleScrubbing();
+    }
 });

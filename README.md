@@ -15,7 +15,7 @@ You can play any video that you want, just follow the instructions below 👇
 1. Download [ffmpeg](https://ffmpeg.org/download.html) so you be able to run the next command
 1. Open terminal and execute the following command
    ```bash
-   ffmpeg -i assets/video.mp4 -vf fps=1/10,scale=120:-1 assets/previewImgs/preview%d.jpg
+   ffmpeg -i assets/video.mp4 -vf fps=1/10,scale=120:-1 assets/previewImages/preview%d.jpg
    ```
 1. Open the app in the browser following this steps:
    - Expand `src` directory
@@ -50,8 +50,8 @@ Set the output as the folder named `assets/previewImgs/`. The `%d` will incremen
 - [x] Play
 - [x] Pause
 - [x] Change volume
-- [ ] Move forward
-- [ ] Move backwards
+- [x] Move forward
+- [x] Move backwards
 - [ ] Change play velocity
 - [ ] Captions
 - [x] Full screen

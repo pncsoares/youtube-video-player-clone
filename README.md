@@ -11,7 +11,7 @@ You can play any video that you want, just follow the instructions below 👇
 1. Start by forking the repository and clone it to your machine, clone instructions [here](#clone-repository)
 1. Create a folder called `assets` in the root of the directory
 1. Add a `.mp4` file in the root of that new folder
-   -  If you have subtitles, add them to in the same folder
+   -  If you have subtitles, name the file to `subtitles.vtt` and add it into the same folder
 1. Download [ffmpeg](https://ffmpeg.org/download.html) so you be able to run the next command
 1. Open terminal and execute the following command
    ```bash
@@ -21,6 +21,9 @@ You can play any video that you want, just follow the instructions below 👇
    - Expand `src` directory
    - Right click on `index.html` file
    - Chose `Open with Live Server` (If you don't have the extension Live Server installed, you can find it [here](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer))
+1. The final result will be something like this:
+
+   ![assets folder content](./.github/assets-folder-content.png)
 
 ## Command explanation
 

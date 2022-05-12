@@ -52,7 +52,7 @@ Set the output as the folder named `assets/previewImgs/`. The `%d` will incremen
 - [ ] Change play velocity
 - [ ] Captions
 - [x] Full screen
-- [x] Teather mode
+- [x] Theater mode
 - [ ] Picture in picture
 
 # Technologies

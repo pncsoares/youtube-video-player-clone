@@ -7,8 +7,17 @@ const videoContainer = document.querySelector('.video-container');
 const video = document.querySelector('video');
 
 document.addEventListener('keydown', (e) => {
+    const tagName = document.activeElement.tagName.toLowerCase();
+
+    if (tagName === 'input') {
+        return;
+    }
+
     switch (e.key.toLowerCase()) {
         case ' ':
+            if (tagName === 'button') {
+                return;
+            }
         case 'k':
             togglePlayPause();
             break;

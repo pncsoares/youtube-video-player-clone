@@ -5,6 +5,7 @@ const miniPlayerBtn = document.querySelector('.mini-player-btn');
 const muteBtn = document.querySelector('.mute-btn');
 const volumeSlider = document.querySelector('.volume-slider');
 const captionsBtn = document.querySelector('.captions-btn');
+const playbackSpeedBtn = document.querySelector('.speed-btn');
 
 const videoContainer = document.querySelector('.video-container');
 const video = document.querySelector('video');
@@ -235,4 +236,17 @@ function toggleCaptions() {
     const isHidden = captions.mode === 'hidden';
     captions.mode = isHidden ? 'showing' : 'hidden';
     videoContainer.classList.toggle('captions', isHidden);
+}
+
+playbackSpeedBtn.addEventListener('click', changePlaybackSpeed);
+
+function changePlaybackSpeed() {
+    let newPlaybackRate = video.playbackRate + .25;
+
+    if (newPlaybackRate > 2) {
+        newPlaybackRate = .25;
+    }
+
+    video.playbackRate = newPlaybackRate;
+    playbackSpeedBtn.textContent = `${newPlaybackRate}x`;
 }

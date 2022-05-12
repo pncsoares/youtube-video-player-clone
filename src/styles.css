@@ -159,6 +159,10 @@ video {
     border-bottom: 3px solid red;
 }
 
+.video-controls-container .controls button.wide-btn {
+    width: 50px;
+}
+
 .timeline-container {
     height: 7px;
     margin-inline: .5rem;

@@ -46,7 +46,7 @@ Set the output as the folder named `assets/previewImgs/`. The `%d` will incremen
 
 - [x] Play
 - [x] Pause
-- [ ] Change volume
+- [x] Change volume
 - [ ] Move forward
 - [ ] Move backwards
 - [ ] Change play velocity
